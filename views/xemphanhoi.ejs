@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<div class="center">
+  <h3> <%= comment[0].coursename %>  </h3>
+
+  <% for(var i=0; i< comment.length; i++) { %>
+    <a href="/userinfobyemail/<%= comment[i].useremail %>"> <%= comment[i].userfullname %> -  <%= comment[i].useremail %> </a>
+    <textarea class="form-control" readonly> <%= comment[i].comment %> </textarea>
+    <p><%= comment[i].datecreated %></p>
+    <br>
+
+  <%   } %>
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

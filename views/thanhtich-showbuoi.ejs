@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="center">
+
+  <div class="three-cols">
+
+    <% for(var i=0; i< buoitap.length; i++) { %>
+      <div class="motbuoi">
+        <h3>Buổi tập <%= i+1 %> </h3>
+        <p>Thời gian : <%= buoitap[i].time %></p>
+        <p>Nội dung chính : <%= buoitap[i].noidung %> </p>
+        <button type="button" name="button" class="btn btn-success">  <a style="color:white" href="/thanhtichtheobuoi/?courseid=<%= buoitap[i].courseid %>&sttbuoi=<%= buoitap[i].sttbuoi %>">Nhập thành tích</a></button>
+          <br>  <br>
+      </div>
+
+
+
+    <%   }
+
+    %>
+
+
+  </div>
+
+
+
+</div>

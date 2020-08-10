@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<div class="center">
+<h3>Danh sách thanh toán : </h3>
+
+<% for(var i=0; i< payment.length; i++) { %>
+
+<h3>Tên môn : <%= payment[i].coursename %></h3>
+<h3>Học viên : <%= payment[i].userfullname %> -  <%= payment[i].useremail %>  </h3>
+<p>Tổng số tháng của khóa học : <%= payment[i].sothang %> tháng</p>
+<p>Tổng số tháng đóng trước  : <%= payment[i].dongtruoc %> tháng </p>
+<p>Ngày đóng tiền kế tiếp :  <%= payment[i].ngaydongtienketiep %></p>
+<p>Thanh toán học phí cho : <span style="font-weight:bold"><%= payment[i].sothanggiahan %>  tháng</span> </p>
+<p>Số tiền ước tính :  <span style="font-weight:bold"> <%= payment[i].bill %> VNĐ </span></p>
+
+
+<button type="button" name="button" class="btn btn-success"><a href="/xacnhanthanhtoan/?courseid=<%= payment[i].courseid %>&useremail=<%= payment[i].useremail %>" onclick="return confirm('Đồng ý xác nhận thanh toán ?')" style="color:white">Xác nhận thanh toán </a></button>
+
+<hr>
+
+<br>
+
+
+<%   }
+
+%>
+</div>
+<%- include('partials/footer') %>

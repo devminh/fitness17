@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật ảnh khóa học</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/uploadimg.css">
+      <link rel="stylesheet" href="../style/main_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="title">
+        <h3>Thay đổi hình cho <%= course[0].coursename %> - Bộ môn <%= course[0].subject %> </h3>
+        <input type="text" class="courseid" name="" value="<%= course[0].courseid %>" style="display:none">
+
+    </div>
+
+    <div class="dropzone">
+        <div class="info"></div>
+    </div>
+
+    <div class="center">
+        <button class="btn btn-success updateimgtodb" type="button" name="button">Cập nhật hình ảnh !</button><br>
+    </div>
+
+
+    <script type="text/javascript" src="../uploadscript/imgur.js"></script>
+    <script type="text/javascript" src="../uploadscript/uploadcourseimg.js"></script>
+</body>
+
+</html>

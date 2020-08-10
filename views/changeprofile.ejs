@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+
+
+<br>
+
+<div class="center">
+
+  <img class="avatarimg" src="<%= (profile[0].avatarsrc) %>" alt="" style="width:70px;height:70px" >
+  <a href="/updateavatar" target="_blank">Cập nhật avatar</a>
+
+
+
+<br>
+
+
+  <form class="" action="/updateprofile" method="post">
+
+
+    <div class="form-group">
+      <label for="">Họ tên :</label>
+      <input type="text" class="form-control" name="hoten" value="<%= profile[0].hoten %>" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh</label>
+      <input type="date" class="form-control" name="dob" value="<%= profile[0].namsinh %>" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại: </label>
+      <input type="text" class="form-control" name="tel" value="<%= profile[0].tel %>">
+    </div>
+    <div class="form-group">
+      <label for="">Email: </label>
+      <input type="text" class="form-control" name="email"  value="<%= profile[0].email %>" readonly>
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND : </label>
+      <input type="text" class="form-control" name="cmnd" value="<%= profile[0].cmnd %>">
+    </div>
+
+    <div class="form-group">
+      <label for="">Bằng cấp và chứng chỉ : </label>
+      <textarea name="bangcap" class="form-control" style="height:500px"><%= profile[0].bangcap %></textarea>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-success" name="button">Đồng ý thay đổi ! </button>
+
+  </form>
+</div>
+
+
+
+<%- include('partials/footer') %>

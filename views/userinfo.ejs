@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+<br>
+
+<div class="center">
+
+    <div class="form-group">
+      <label for="">Họ và tên : </label>
+      <input type="text" class="form-control" name="fullname" readonly value="<%= profile[0].hoten %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh </label>
+      <input type="date" class="form-control" name="dob" readonly value="<%= profile[0].namsinh %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Email:</label>
+      <input type="email" class="form-control" name="email" readonly value="<%= profile[0].email %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại</label>
+      <input type="tel" class="form-control" name="tel" readonly value="<%= profile[0].tel %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND</label>
+      <input type="tel" class="form-control" name="cmnd" readonly value="<%= profile[0].cmnd %>">
+
+    </div>
+
+    <hr>
+    <h3>Thông tin sức khỏe cơ bản :</h3>
+    <p>Thống kê dựa vào máy đo InBody</p>
+    <div class="form-group">
+      <label for="">Chiều cao (mét)</label>
+      <input type="text" class="form-control" name="height" readonly value="<%= profile[0].chieucao %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Cân nặng (kí)</label>
+      <input type="text" class="form-control" name="weight" readonly value="<%= profile[0].cannang %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Số đo 3 vòng</label>
+      <input type="text" placeholder="Vòng 1:" class="form-control" name="vong1" readonly value="<%= profile[0].vong1 %>">
+      <input type="text" placeholder="Vòng 2:" class="form-control" name="vong2" readonly value="<%= profile[0].vong2 %>">
+      <input type="text" placeholder="Vòng 3:" class="form-control" name="vong3" readonly value="<%= profile[0].vong3 %>">
+
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng cơ (kí)</label>
+      <input type="text" class="form-control" name="muscle" readonly value="<%= profile[0].luongco %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng mỡ (kí)</label>
+      <input type="text" class="form-control" name="fatmass" readonly value="<%= profile[0].luongmo %>">
+
+    </div>
+
+
+
+</div>
+<%- include('partials/footer') %>

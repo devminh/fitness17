@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<table class="center">
+  <tr>
+    <th>Tên Hội viên</th>
+    <th>Năm sinh</th>
+    <th>Email</th>
+    <th>Tel:</th>
+    <th>Số CMND/căn cước</th>
+    <th>Lí do loại hội viên</th>
+  </tr>
+  <% for(var i=0; i< kicklist.length; i++) { %>
+    <tr>
+      <td><%= kicklist[i].hoten %></td>
+      <td><%= kicklist[i].dob %> </td>
+      <td><%= kicklist[i].email %></td>
+      <td><%= kicklist[i].tel %></td>
+      <td><%= kicklist[i].cmnd %></td>
+      <td><%= kicklist[i].reason%></td>
+    <td><button type="button" name="button" class="btn btn-danger"><a onclick="return confirm('Bạn có chắc muốn xóa hội viên này ?')" href="/deleteuser/<%= kicklist[i].email %>" style="color:white">Loại học viên</a></button></td>
+    <td><button type="button" name="button" class="btn btn-success"><a onclick="return confirm('Bạn có chắc muốn giữ lại hội viên này ?')" href="/keepuser/<%= kicklist[i].userid %>" style="color:white">Giữ học viên lại </a></button></td>
+    </tr>
+
+
+  <%   }
+
+  %>
+
+
+</table>
+
+<%- include('partials/footer') %>

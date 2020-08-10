@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+
+    <div class="center">
+      <form class="" action="/updatebuoitap" method="post">
+        <div class="form-group">
+
+          <h3>Số buổi tập : </h3>
+          <input type="text" name="courseid" value="<%= buoitap[0].courseid %>" style="display:none">
+        <input type="text" name="sobuoitap" value="<%= buoitap.length %>" readonly>
+      </div>
+
+
+<% for(var i=0; i< buoitap.length; i++) { %>
+    <div class="form-group">
+
+    <p style="font-weight:bold">Buổi <%= i+1 %></p>
+      <label for="">Thời gian:</label>
+    <p><%= buoitap[i].time %></p>
+    <input type="datetime-local" name="buoi<%= i %>" value="" class="form-control">
+    <br>
+    <label for="">Nội dung chính</label>
+    <input type="text" name="noidung<%= i %>" value="" class="form-control">
+  </div>
+
+
+<%   }
+
+%>
+
+  <button type="submit" name="button" class="btn btn-success">Cập nhật !</button>
+  </form>
+
+
+  </div>
+  <%- include('partials/footer') %>

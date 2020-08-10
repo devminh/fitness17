@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+
+
+<link rel="stylesheet" href="style/main_style.css">
+<br>
+
+<div class="center">
+  <form class="" action="auth" method="post">
+    <div class="form-group">
+      <label for="">Email :</label>
+      <input type="text" class="form-control" name="email" placeholder="" required>
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Mật khẩu : </label>
+      <input type="password" class="form-control" name="password" placeholder="" required>
+    </div>
+
+    <button type="submit" class="btn btn-success" name="button">Đăng nhập </button>
+
+  </form>
+  <br>
+  <p>Lưu ý : Để tạo tài khoản mới , vui lòng liên hệ admin !</p>
+</div>
+
+<%- include('partials/footer') %>

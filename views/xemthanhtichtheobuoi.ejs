@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<div class="center">
+  <h2><%= thanhtich[0].coursename %> - Buổi <%= thanhtich[0].sttbuoi+1 %> </h2>
+
+
+
+    <h3>Danh sách học viên đã đi học :</h3>
+    <br>
+    <table style="width:100%">
+      <tr>
+        <th>Tên học viên</th>
+        <th>Chỉ số calo</th>
+        <th>Chỉ số cơ ngực</th>
+        <th>Chỉ số dẻo dai</th>
+        <th>Chỉ số cơ bụng</th>
+        <th>Chỉ số cơ chân</th>
+        <th>Chỉ số cơ vai</th>
+      </tr>
+      <% for(var i=0; i< thanhtich.length; i++) { %>
+
+        <tr>
+          <td><%= thanhtich[i].fullname %> - <%= thanhtich[i].useremail %></td>
+          <td><%= thanhtich[i].calo %></td>
+          <td><%= thanhtich[i].conguc %></td>
+          <td><%= thanhtich[i].deodai %></td>
+          <td><%= thanhtich[i].cobung %></td>
+          <td><%= thanhtich[i].cochan %></td>
+          <td><%= thanhtich[i].covai %></td>
+
+
+        </tr>
+
+
+
+
+
+
+      <%   }
+
+      %>
+    </table>
+
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

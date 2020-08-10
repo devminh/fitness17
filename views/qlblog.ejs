@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<br>
+    <div class="center">
+
+<p>Admin sẽ được quyền truy cập tất cả blog!</p>
+  <h3>Danh sách các bài viết của bạn :</h3>
+  <br>
+
+<% for(var i=0; i< result.length; i++) { %>
+
+  <a href="/showblog/<%= result[i]._id %>"> <%= result[i].title %>  </a>
+  <p> <%= result[i].intro %> </p>
+  <p> <%= result[i].date %> </p>
+  <p> Người đăng : <%= result[i].vitri %> - <%= result[i].hoten %> </p>
+  <button class="btn btn-success" type="button" name="button"> <a style="color:white" href="editblog/<%= result[i]._id %>"><i class="fas fa-pencil-alt"></i> Chỉnh sửa</a> </button>
+  <button class="btn btn-danger" type="button" name="button"> <a onclick="return confirm('Bạn có chắc chắc xóa bài blog này ?')" style="color:white" href="deleteblog/<%= result[i]._id %>"><i class="fas fa-trash-alt"></i> Xóa </a> </button>
+
+
+  <hr>
+
+
+<%   }
+
+%>
+  </div>
+
+  <%- include('partials/footer') %>

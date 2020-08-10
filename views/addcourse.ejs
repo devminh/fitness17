@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+
+<div class="center">
+  <form class="" action="/addcoursetodb" method="post">
+
+    <div class="form-group">
+      <label for="">Tên khóa học </label>
+      <input type="text" class="form-control" name="coursename"  required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Bộ môn </label>
+      <input type="text" class="form-control" name="subject" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Thời lượng mỗi buổi (phút) </label>
+      <input type="number" class="form-control" name="duration" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số buổi học :  </label>
+      <p>Vui lòng ước lượng chính xác buổi học , đây là tham số không thể thay đổi</p>
+      <input type="number" class="form-control" name="days" required>
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Chọn coach :</label>
+      <select class="" name="coach">
+        <% for(var i=0; i< ptlist.length; i++) { %>
+          <option value="<%= ptlist[i].hoten %>-<%= ptlist[i].email %>"> <%= ptlist[i].hoten %> - <%= ptlist[i].email %> </option>
+      <%   }
+      %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="">Mô tả khóa học :</label>
+   <textarea  class="form-control" name="description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="">Lợi ích khóa học :</label>
+      <textarea  class="form-control" name="advantages"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="">Ngày bắt đầu : </label>
+      <p>Vui lòng nhập chính xác ngày bắt đầu khóa học , đây là tham số không thể thay đổi</p>
+      <p>Ngày bắt đầu nên để trùng với buổi 1 ,dùng để tính toán học phí cho học viên </p>
+      <input type="date" class="form-control" name="beginday" required>
+    </div>
+
+    <div class="form-group">
+      <label for="">Số tháng của khóa học </label>
+      <p>Vui lòng nhập chính xác số tháng của khóa học , đây là tham số không thể thay đổi</p>
+      <p>Số tháng này được dùng để tính toán học phí cho học viên</p>
+      <input type="number" class="form-control" name="sothang" min='1' required>
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Học phí của 1 tháng học (VNĐ) :</label>
+      <input type="number" class="form-control" name="monthlyfee" min='1' required>
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Học phí của cả khóa học (VNĐ) :</label>
+      <p>Nếu số tháng lớn hơn 1 </p>
+      <input type="number" class="form-control" name="fullfee" min='1' required>
+
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-success" name="button">Tạo khóa học</button>
+
+  </form>
+</div>
+
+<%- include('partials/footer') %>

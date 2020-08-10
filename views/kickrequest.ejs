@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<br>
+
+<div class="center">
+  <form class="" action="/sendkickrequest" method="post">
+    <div class="form-group">
+      <label for="">Họ và tên : </label>
+      <input type="text" name="userid" style="display:none" value="<%= profile[0]._id %>">
+      <input type="text" class="form-control" name="fullname" readonly value="<%= profile[0].hoten %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh </label>
+      <input type="date" class="form-control" name="dob" readonly value="<%= profile[0].namsinh %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Email:</label>
+      <input type="email" class="form-control" name="email" readonly value="<%= profile[0].email %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại</label>
+      <input type="tel" class="form-control" name="tel" readonly value="<%= profile[0].tel %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND</label>
+      <input type="tel" class="form-control" name="cmnd" readonly value="<%= profile[0].cmnd %>">
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Lí do loại hội viên :</label>
+      <textarea class="form-control" name='reason'></textarea>
+    </div>
+    <button type="submit" name="button" class="btn btn-success">Gửi yêu cầu loại hội viên </button>
+  </form>
+
+
+
+
+</div>

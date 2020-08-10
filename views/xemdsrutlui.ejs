@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+<div class="center">
+  <h3> <%= dsrutlui[0].coursename %>  </h3>
+
+  <% for(var i=0; i< dsrutlui.length; i++) { %>
+    <a href="/userinfobyemail/<%= dsrutlui[i].useremail %>"> <%= dsrutlui[i].userfullname %> -  <%= dsrutlui[i].useremail %> </a>
+    <h3>Lí do rút lui :</h3>
+    <textarea class="form-control" readonly> <%= dsrutlui[i].reason %> </textarea>
+    <p><%= dsrutlui[i].datecreated %></p>
+    <br>
+
+  <%   } %>
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

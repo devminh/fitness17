@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class="center">
+  <h2><%= buoitap[0].coursename %> - Buổi <%= buoitap[0].sttbuoi+1 %> </h2>
+  <p><%= buoitap[0].time %></p>
+  <br>
+
+  <h4>Một số lưu ý cho coach :</h4>
+  <p>Vui lòng nhập chính xác một lần duy nhất để tránh học viên không phải xem lại cập nhật thông tin sức khỏe !</p>
+
+  <p>- Nếu bạn đã nhập thành tích buổi này rồi , vui lòng xem <a href="/xemthanhtichtheobuoi/?courseid=<%= buoitap[0].courseid %>&sttbuoi=<%= buoitap[0].sttbuoi %>">tại đây </a>
+ !</p>
+
+ <p>- Nếu đã xuất hiện buổi tập này , vui lòng không nhập lại ở đây !</p>
+
+  <form class="" action="/nhapthanhtich" method="post">
+    <h3>Danh sách học viên đã đi học :</h3>
+    <br>
+    <input type="text" name="courseid" value="<%= buoitap[0].courseid %>" style="display:none" >
+    <input type="text" name="coursename" value="<%= buoitap[0].coursename %>" style="display:none" >
+    <input type="text" name="sttbuoi" value="<%= buoitap[0].sttbuoi %>" style="display:none" >
+
+    <input type="text" name="activestudent" value="<%= dstap.length %>" style="display:none" >
+
+  <% for(var i=0; i< dstap.length; i++) { %>
+    <input type="text" name="useremail<%= i %>" value="<%= dstap[i].useremail %>" style="display:none">
+    <input type="text" name="fullname<%= i %>" value="<%= dstap[i].fullname %>" style="display:none" >
+
+  <h4> <%= dstap[i].fullname %> - <%= dstap[i].useremail %> </h4>
+  <input type="number"  name="calo<%= i %>"  min="0.01" max="1000" step="0.01" placeholder="Chỉ số calo:">
+  <input type="number" name="conguc<%= i %>"  min="0.01" max="200" step="0.01" placeholder="Chỉ số cơ ngực:">
+  <input type="number" name="deodai<%= i %>"  min="0.01" max="500" step="0.01" placeholder="Chỉ số dẻo dai:">
+  <input type="number" name="cobung<%= i %>" min="0.01" max="500" step="0.01" placeholder="Chỉ số cơ bụng:">
+  <input type="number" name="cochan<%= i %>" min="0.01" max="500" step="0.01" placeholder="Chỉ số cơ chân:">
+  <input type="number" name="covai<%= i %>" min="0.01" max="500" step="0.01" placeholder="Chỉ số cơ vai:">
+  <hr>
+
+  <br>
+
+
+  <%   }
+
+  %>
+    <button onclick="return confirm('Bạn có chắc chắn muốn đăng thành tích này ?')" type="post" name="button" class="btn btn-success">Đăng thành tích !</button>
+  </form>
+
+
+</div>
+<%- include('partials/footer') %>

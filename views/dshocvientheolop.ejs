@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<br>
+  <div class="center">
+
+    <p>Tình trạng : run là còn hạn , pause là cần gia hạn , stop là khóa học kết thúc </p>
+
+  <% for(var i=0; i< userlist.length; i++) { %>
+
+  <h3> <%= userlist[i].userfullname %> -  <%= userlist[i].useremail %> | Tình trạng : <span style="font-weight:bold"><%= userlist[i].condition %></span>   </h3>
+  <button type="button" name="button" class="btn btn-primary"> <a style="color:white" href="/userinfobyemail/<%= userlist[i].useremail %>">Xem hồ sơ</a></button>
+
+  <hr>
+
+
+
+  <br>
+
+
+  <%   }
+  %>
+
+    </div>
+
+<%- include('partials/footer') %>

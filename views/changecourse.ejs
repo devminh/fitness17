@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+<br>
+<div class="center">
+
+  <img src="<%= course[0].courseimg %>" alt="" style="width:100px;height:70px">
+  <a href="/updatecourseimg/<%= course[0].courseid %>" target="_blank">Cập nhật ảnh khóa học</a>
+
+
+      <br><br>
+
+
+  <form class="" action="/changecoursetodb" method="post">
+
+
+
+    <div class="form-group">
+      <label for="">Tên khóa học </label>
+      <input type="text" class="form-control" name="courseid" value="<%= course[0].courseid %>" style="display:none">
+      <input type="text" class="form-control" name="coursename" value="<%= course[0].coursename %>">
+
+    </div>
+    <div class="form-group">
+      <label for="">Bộ môn </label>
+      <input type="text" class="form-control" name="subject" value="<%= course[0].subject %>">
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Chọn coach :</label>
+      <select class="" name="coach">
+        <option value="<%= course[0].coachname %>-<%= course[0].coachemail %>"> <%= course[0].coachname %> - <%= course[0].coachemail %> </option>
+
+        <% for(var i=0; i< ptlist.length; i++) { %>
+          <option value="<%= ptlist[i].hoten %>-<%= ptlist[i].email %>"> <%= ptlist[i].hoten %> - <%= ptlist[i].email %> </option>
+      <%   }
+      %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="">Mô tả khóa học :</label>
+   <textarea  class="form-control" name="description"><%= course[0].description %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="">Lợi ích khóa học :</label>
+      <textarea  class="form-control" name="advantages"><%= course[0].advantages %></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="">Ngày bắt đầu : </label>
+      <input type="date" class="form-control" name="beginday" value="<%= course[0].startday %>" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="">Số tháng  </label>
+      <input type="number" class="form-control" name="beginday" value="<%= course[0].sothang %>" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="">Học phí của 1 tháng học (VNĐ) :</label>
+      <input type="number" class="form-control" name="monthlyfee" min='1' value="<%= course[0].monthlyfee %>" >
+
+    </div>
+
+    <div class="form-group">
+      <label for="">Học phí của cả khóa học (VNĐ) :</label>
+      <p>Nếu số tháng lớn hơn 1 </p>
+      <input type="number" class="form-control" name="fullfee" min='1' value="<%= course[0].fullfee %>">
+
+    </div>
+
+
+
+
+
+    <button  type="submit" class="btn btn-success" name="button">Thay đổi thông tin khóa học !</button>
+
+  </form>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+
+<br>
+<div class="center">
+  <form action="/searchhoivien" style="display:flex" method="post">
+
+      <input type="text" class="form-control" name="searchvalue" placeholder="Tìm kiếm hội viên theo họ tên hoặc email" style="width:50%">
+      <button type="submit" class="btn btn-default">Tìm kiếm</button>
+
+
+  </form>
+
+  <br><br>
+
+  <% if (vitri =='admin'){ %>
+    <a href="/kicklist">Danh sách yêu cầu xóa hội viên </a>      <%
+    }%>
+<br><br>
+
+<% for(var i=0; i< users.length; i++) { %>
+
+<h3> <%= users[i].hoten %> -  <%= users[i].email %> </h3>
+<button type="button" name="button" class="btn btn-primary"> <a style="color:white" href="/userinfo/<%= users[i]._id %>">Xem hồ sơ</a></button>
+<button type="button" name="button" class="btn btn-success"> <a style="color:white" href="/edithealth/<%= users[i]._id %>">Chỉnh sửa hồ sơ sức khỏe</a></button>
+
+<% if (vitri !=='admin'){ %>
+  <button type="button" name="button" class="btn btn-danger"> <a onclick="return confirm('Bạn có chắc muốn gửi yêu cầu loại hội viên này ?')" style="color:white" href="/kickrequest/<%= users[i]._id %>">Yêu cầu loại hội viên</a></button>
+    <%
+  }%>
+
+  <% if (vitri =='admin'){ %>
+    <button type="button" name="button" class="btn btn-danger"> <a onclick="return confirm('Bạn có chắc muốn xóa hội viên này ?')" style="color:white" href="/deleteuser/<%= users[i].email %>">Loại hội viên</a></button>
+      <%
+    }%>
+
+<hr>
+
+
+
+<br>
+
+
+<%   } %>
+
+</div>
+
+<%- include('partials/footer') %>

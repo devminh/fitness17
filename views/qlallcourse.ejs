@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<br>
+<div class="center">
+<p>Lưu ý : Chỉ admin mới được quyền xóa khóa học !</p>
+
+<% for(var i=0; i< courselist.length; i++) { %>
+
+<h3> <img src="<%= (courselist[i].courseimg).slice(6,(courselist[i].courseimg).length) %>" alt="" style="width:100px;height:70px"> <%= courselist[i].coursename %> - Bộ môn : <%= courselist[i].subject %> </h3>
+<p>Coach : <%= courselist[i].coachname %> -<%= courselist[i].coachemail %> </p>
+<button type="button" name="button" class="btn btn-primary"> <a style="color:white" href="/capnhatlichtap/<%= courselist[i].courseid %>"><i class="fas fa-clock"></i> Cập nhật lịch tập</a>         </button>
+<button type="button" name="button" class="btn btn-success"> <a style="color:white" href="/dshocvientheolop/<%= courselist[i].courseid %>"><i class="fas fa-list"></i> Danh sách học viên</a>   </button>
+<button type="button" name="button" class="btn btn-success"><a style="color:white" href="/changecourse/<%= courselist[i].courseid %>"><i class="fas fa-pencil-alt"></i>Thay đổi thông tin khóa học</a>   </button>
+<button type="button" name="button" class="btn btn-warning"><a href="/xemthanhtich-showbuoi/<%= courselist[i].courseid %>" style="color:white"><i class="fas fa-medal"></i> Xem thành tích học viên </a></button>
+<br><br>
+<button type="button" name="button" class="btn btn-info"><a href="/xemphanhoi/<%= courselist[i].courseid %>" style="color:white"><i class="fas fa-reply"></i> Xem phản hồi từ học viên </a></button>
+<button type="button" name="button" class="btn btn-dark"><a href="/xemdsrutlui/<%= courselist[i].courseid %>" style="color:white"><i class="far fa-window-close"></i> Danh sách học viên rút lui </a></button>
+
+
+<% if (vitri =='admin'){ %>
+  <button type="button" name="button" class="btn btn-danger"><a href="/deletecourse/<%= courselist[i].courseid %>" style="color:white"> <i class="fas fa-trash-alt"></i> Xóa khóa học</a></button>
+    <%
+  }%>
+
+
+<hr>
+
+<br>
+
+
+<%   }
+
+%>
+</div>
+
+<%- include('partials/footer') %>

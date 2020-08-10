@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="style/main_style.css">
+<br>
+
+<div class="center">
+  <form class="" action="/signup" method="post">
+    <div class="form-group">
+      <label for="">Vị trí </label>
+      <select name="position">
+        <option value="admin"> Admin </option>
+        <option value="recep"> Tiếp tân </option>
+        <option  value="pt"> PT </option>
+
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Họ và tên : </label>
+      <input type="text" class="form-control" name="fullname" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh </label>
+      <input type="date" class="form-control" name="dob" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Email:</label>
+      <input type="email" class="form-control" name="email" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại</label>
+      <input type="tel" class="form-control" name="tel" minlength="10" maxlength="10" placeholder="Nhập đúng 10 kí tự số" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND</label>
+      <input type="tel" class="form-control" name="cmnd" placeholder="Nhập đúng 9 hoặc 12 kí tự số" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Mật khẩu</label>
+      <input type="password" class="form-control" name="password1" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Nhập lại mật khẩu</label>
+      <input type="password" class="form-control" name="password2" required>
+
+    </div>
+
+    <button onclick="return confirm('Bạn có muốn đăng kí tài khoản ?')" type="submit" class="btn btn-success" name="button">Đăng kí</button>
+
+  </form>
+</div>
+<%- include('partials/footer') %>
