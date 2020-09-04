@@ -6,5 +6,6 @@ Fitness17 được deploy trên Google Cloud : https://fitness17-269909.appspot.
 
 Tài khoản đăng nhập để test : 
 
-admin@gmail.com
-123
+useremail : admin@gmail.com
+
+password: 123
